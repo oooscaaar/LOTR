@@ -30,15 +30,22 @@ struct ContentView: View {
                                         .scaledToFit()
                                         .frame(height: 33)
                                     Text("Silver Piece").font(.headline).foregroundStyle(.white)
-                                    input
                                 }
+                                Text("Input Placeholder").foregroundStyle(.gray)
                             }
                             VStack{Image(systemName: "equal").foregroundColor(.white)}
                             VStack{
-                                
+                                HStack{
+                                    Image(.goldpiece)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 33)
+                                    Text("Gold Piece").font(.headline).foregroundStyle(.white)
+                                }
+                                Text("Input Placeholder").foregroundStyle(.gray)
                             }
-                        }
-                    }
+                        }.padding().background(.black).cornerRadius(15)
+                    }.padding()
                 }
             }
         }
