@@ -12,14 +12,31 @@ struct ContentView: View {
         ZStack {
             VStack {
                 Image(.background)
-                    .resizable()
-            }.ignoresSafeArea()
+                    .resizable().ignoresSafeArea()
+            }
             VStack {
                 Image(.prancingpony).resizable().scaledToFit().frame(height:200)
+                Text("Currency Exchange").font(.largeTitle).foregroundStyle(.white)
                 HStack{
                     ZStack {
                         VStack{
                             
+                        }
+                        HStack{
+                            VStack{
+                                HStack{
+                                    Image(.silverpiece)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 33)
+                                    Text("Silver Piece").font(.headline).foregroundStyle(.white)
+                                    input
+                                }
+                            }
+                            VStack{Image(systemName: "equal").foregroundColor(.white)}
+                            VStack{
+                                
+                            }
                         }
                     }
                 }
