@@ -17,7 +17,11 @@ struct ContentView: View {
             VStack {
                 Image(.prancingpony).resizable().scaledToFit().frame(height:200)
                 HStack{
-                    
+                    ZStack {
+                        VStack{
+                            
+                        }
+                    }
                 }
             }
         }
