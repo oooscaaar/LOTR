@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var displayExchangeInfo = false
+    @State var leftAmount = ""
+    @State var rightAmount = ""
     var body: some View {
         ZStack {
             VStack {
@@ -31,9 +34,11 @@ struct ContentView: View {
                                         .frame(height: 33)
                                     Text("Silver Piece").font(.headline).foregroundStyle(.white)
                                 }
-                                Text("Input Placeholder").foregroundStyle(.gray)
+                                TextField(
+                                    "Amount",
+                                    text: $rightAmount).textFieldStyle(.roundedBorder)
                             }
-                            VStack{Image(systemName: "equal").foregroundColor(.white)}
+                            Image(systemName: "equal").foregroundColor(.white).padding(.top).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                             VStack{
                                 HStack{
                                     Image(.goldpiece)
@@ -42,12 +47,27 @@ struct ContentView: View {
                                         .frame(height: 33)
                                     Text("Gold Piece").font(.headline).foregroundStyle(.white)
                                 }
-                                Text("Input Placeholder").foregroundStyle(.gray)
+                                TextField(
+                                    "Amount",
+                                    text: $rightAmount).textFieldStyle(.roundedBorder).multilineTextAlignment(.trailing)
                             }
-                        }.padding().background(.black).cornerRadius(15)
+                            
+                        }.padding().background(.black.opacity(0.5)).cornerRadius(15)
                     }.padding()
                 }
+                Spacer()
+                HStack{
+                    Spacer()
+                    Button{
+                        displayExchangeInfo.toggle()
+                        print("Show info: \(displayExchangeInfo)")
+                    } label: {
+                        Image(systemName: "info.circle.fill").foregroundColor(.white).font(.largeTitle)
+                    }.padding(.trailing)
+                }
+
             }
+
         }
     }
 }
